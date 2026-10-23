@@ -1,16 +1,25 @@
 #include <iostream>
-#include <string>
 #include <vector>
 
 int main() {
-    //std::cout << "Hello World\n";
-
-    // A small taste of modern C++ ( C++17 ): auto, range-for, std::vector
-    std::vector<std::string> symbols{"APPL", "MSFT", "GOOG", "TSLA"};
-    std::cout << "\n\nWatching \n";
-    for (const auto& s: symbols) {
-        std::cout << s << '\n';
+    // Closing prices for the last 10 days
+    std::vector<double> prices{100, 102, 104, 101, 105, 108, 015, 110, 104, 106};
+    std::cout << "Prices";
+    for (double p: prices) {
+        std::cout << ' '  << p;
     }
+
+    std::cout <<'\n';
+
+    double sum = 0;
+    for(double p: prices) {
+        sum += p;
+    }
+
+    double average = sum / prices.size();
+
+    std::cout << "Days " << prices.size() << '\n';
+    std::cout << "Average " << average << '\n';
 
     return 0;
 }
